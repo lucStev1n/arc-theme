@@ -1,0 +1,19 @@
+#root {
+    @apply flex;
+    @apply w-screen h-screen;
+    @apply select-none;
+
+    background: linear-gradient(0deg,rgb(187,177,230), rgb(246,227,175))
+}
+.navigate {
+    @apply mx-2 pt-6;
+}
+.view {
+    @apply flex flex-1 relative;
+    @apply m-2 px-2 py-4;
+    @apply rounded-lg;
+    @apply bg-gray-50;
+
+    box-shadow: 0 6px 6px hsl(0deg 0% 0% / 0.3);
+
+}

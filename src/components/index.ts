@@ -1,1 +1,1 @@
-export { default as Hello } from "./hello/Hello";
+export { default as Notice } from "./notice/notice";
