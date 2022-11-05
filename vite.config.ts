@@ -4,6 +4,8 @@ import react from "@vitejs/plugin-react";
 import WindiCSS from "vite-plugin-windicss";
 import { resolve } from "path";
 import AutoImport from "unplugin-auto-import/vite";
+import Components from "unplugin-react-components/vite";
+
 // https://vitejs.dev/config/
 export default defineConfig({
     resolve: {
@@ -14,6 +16,9 @@ export default defineConfig({
     plugins: [
         react(),
         WindiCSS(),
+        Components({
+            dts: true,
+        }),
         AutoImport({
             include: [
                 /\.[tj]sx?$/, // .ts, .tsx, .js, .jsx
@@ -33,11 +38,11 @@ export default defineConfig({
     ],
     server: {
         proxy: {
-            '/api': {
+            "/api": {
                 changeOrigin: true,
-                target: 'http://localhost/',
-                rewrite: (path) => path.replace(/^\/api/, ""),
-            }
+                target: "http://localhost/",
+                rewrite: path => path.replace(/^\/api/, ""),
+            },
         },
     },
 });
